@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+---
+
+<section id="hero" class="min-h-screen flex items-center bg-[#1E1B29] px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+    
+    <!-- Columna izquierda (Texto) -->
+    <div class="flex-1">
+      <p class="text-gray-200 text-sm font-mono">Hi, my name is</p>
+
+      <h1 class="text-white text-5xl sm:text-6xl font-bold mt-2 font-mono">
+        Samuel Rivadeneira.
+      </h1>
+
+      <h2 class="text-gray-400 text-3xl sm:text-4xl font-mono font-bold mt-2">
+        I build things for the web.
+      </h2>
+
+      <p class="text-gray-200 mt-6 leading-relaxed font-mono">
+        Soy un desarrollador full-stack especializado en construir experiencias digitales 
+        modernas. Actualmente me enfoco en soluciones accesibles y centradas en las personas.
+      </p>
+
+      <div class="mt-8 inline-flex">
+        <a
+          href="#projects"
+          class="px-6 py-2 border-2 border-white rounded-md relative overflow-hidden
+                 transition-all duration-300 ease-out
+                 hover:bg-white hover:text-[#1E1B29] hover:-translate-x-1 font-dev text-white"
+        >
+          Ver mis proyectos
+        </a>
+      </div>
+    </div>
+
+    <!-- Columna derecha (Imagen) -->
+    <div class="flex-1 flex justify-center md:justify-end">
+      <img 
+        src="/sam_port.png" 
+        alt="Samuel Rivadeneira" 
+        class="w-64 h-88 object-cover rounded-2xl border-4 border-white shadow-lg"
+      />
+    </div>
+  </div>
+</section>

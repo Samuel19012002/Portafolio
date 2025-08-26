@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Experience from "../components/Experience.tsx";
+import Socials from "../components/Socials.tsx";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portafolio | Samuel Rivadeneira</title>
+  </head>
+  <body class="min-h-screen bg-[#1E1B29]">
+    <Navbar />
+    <Hero />
+    <About />
+    <Experience client:load />
+    <Contact />
+
+    <!-- Barra fija de redes -->
+    <Socials client:load />
+  </body>
+</html>

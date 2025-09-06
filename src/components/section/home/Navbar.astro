@@ -1,0 +1,43 @@
+---
+import "@//styles/global.css";
+
+const links = [
+  { href: "#about",  text: "Sobre mí" },
+  { href: "#work",  text: "Experiencia" },
+  { href: "#contact",  text: "Contacto" },
+];
+
+const linkClass =
+  "px-6 py-3 hover:bg-white/10 transition-colors duration-150 ease-in rounded-md font-mono font-bold flex gap-1";
+
+---
+
+<nav class="bg-[#1E1B29] text-white px-6 py-4 flex items-center justify-between">
+  <!-- Logo -->
+  <div class="text-2xl font-bold font-dev">MiPortafolio</div>
+
+  <!-- Links -->
+  <ul class="hidden md:flex gap-3 items-center whitespace-nowrap">
+    {links.map(link => (
+      <li>
+        <a href={link.href} class={linkClass}>
+          {link.text}
+        </a>
+      </li>
+    ))}
+
+   
+  </ul>
+
+  <!-- Botón móvil -->
+  <button class="md:hidden text-2xl px-3 py-2 rounded-md hover:bg-white/10 transition">
+    ☰
+  </button>
+</nav>
+
+<script>
+  document.getElementById("download-btn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("Descargando CV...");
+  });
+</script>

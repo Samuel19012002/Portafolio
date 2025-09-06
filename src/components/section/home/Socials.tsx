@@ -20,9 +20,9 @@ const socials = [
 
 export default function Socials() {
     return (
-        <div className="fixed left-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-6 z-50">
+        <div className="flex flex-col items-center gap-6">
             {/* Línea superior */}
-            <div className="w-px h-24 bg-gray-400 mb-6"></div>
+            <div className="w-px h-24 bg-gray-400 " />
 
             {socials.map((social) => (
                 <a
@@ -38,7 +38,7 @@ export default function Socials() {
             ))}
 
             {/* Línea inferior */}
-            <div className="w-px h-24 bg-gray-400 mt-6"></div>
+            <div className="w-px h-24 bg-gray-400" />
         </div>
     );
 }

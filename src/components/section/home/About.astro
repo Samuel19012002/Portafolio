@@ -1,5 +1,6 @@
 ---
-import "../styles/global.css";
+import "@//styles/global.css";
+import LinkButton from "@/components/shared/buttons/LinkButton.astro";
 
 const techs = [
     {name : 'JavaScript'},
@@ -28,18 +29,18 @@ const techs = [
       />
     </div>
     <!-- Texto -->
-    <div class="flex-1">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white font-mono mb-6">
+    <div class="flex-1 flex flex-col gap-2">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white font-mono">
           <span class="text-gray-200">01.</span> Sobre mí
         </h2>
         
-        <p class="text-gray-200 leading-relaxed font-mono mb-4">
+        <p class="text-gray-200 leading-relaxed font-mono ">
           Soy <span class="text-[#06B6D4] font-bold">Samuel Rivadeneira</span>, 
           un desarrollador <span class="text-[#10B981]">Full-Stack</span> con más de 5 años de experiencia 
           en el desarrollo de aplicaciones web y móviles. 
         </p>
   
-        <p class="text-gray-200 leading-relaxed font-mono mb-4">
+        <p class="text-gray-200 leading-relaxed font-mono ">
           He trabajado en proyectos que van desde plataformas educativas hasta sistemas de asistencia 
           y control para empresas, utilizando tanto <span class="text-[#10B981]">arquitecturas serverless</span> 
           como metodologías <span class="text-[#06B6D4]">Domain-Driven Design (DDD)</span>. 
@@ -51,21 +52,23 @@ const techs = [
             {techs.map(tech => (
               <span 
                 class="px-4 py-1 border border-[#06B6D4] text-[#06B6D4] 
-                       rounded-full text-sm font-mono hover:bg-[#06B6D4] hover:text-[#1E1B29] transition">
+                       rounded-full text-sm font-mono hover:bg-[#06B6D4] hover:text-[#1E1B29] transition-colors duration-150 ease-in">
                 {tech.name}
               </span>
             ))}
           </div>
+
+          <span/>
   
-        <!-- Botón -->
-        <div class="mt-8">
-          <a href="/resume.pdf" 
-             class="px-6 py-2 border-2 border-white rounded-md relative overflow-hidden
-                    transition-all duration-300 ease-out
-                    hover:bg-white hover:text-[#1E1B29] hover:-translate-x-1 font-dev text-white">
-            Descargar CV
-          </a>
-        </div>
+        <LinkButton href="#" label="Descargar CV" id="download-btn" />
+
       </div>
     </div>
   </section>
+
+  <script>
+    document.getElementById("download-btn")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("Descargando CV...");
+    });
+  </script>

@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  id?: string;
+}
+
+const { href, label, id = "link-btn" } = Astro.props;
+const linkClass = `
+    min-h-10 px-6 py-2 border-2 text-white border-white rounded-md text-center overflow-hidden
+    hover:bg-white hover:text-[#1E1B29] font-mono font-bold transition-colors duration-150 ease-in
+`
+---
+
+<a
+  href={href}
+  id={id}
+  class={linkClass}
+>
+  {label}
+</a>

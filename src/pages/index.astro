@@ -1,11 +1,6 @@
 ---
-import "../styles/global.css";
-import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Contact from "../components/Contact.astro";
-import Experience from "../components/Experience.tsx";
-import Socials from "../components/Socials.tsx";
+import "@//styles/global.css";
+import { About, Contact, Experience, Hero, Navbar, Socials } from '@/components/section/home';
 ---
 
 <html lang="en">
@@ -16,14 +11,20 @@ import Socials from "../components/Socials.tsx";
     <meta name="generator" content={Astro.generator} />
     <title>Portafolio | Samuel Rivadeneira</title>
   </head>
-  <body class="min-h-screen bg-[#1E1B29]">
-    <Navbar />
-    <Hero />
-    <About />
-    <Experience client:load />
-    <Contact />
+  <body class="min-h-screen bg-[#1E1B29] flex">
+    <!-- Columna izquierda con redes -->
+    <div class="flex flex-col justify-center px-4 sticky top-0 h-screen">
+      <Socials client:load />
+    </div>
+    
 
-    <!-- Barra fija de redes -->
-    <Socials client:load />
+    <!-- Columna derecha con el resto del contenido -->
+    <div class="flex-1 flex flex-col">
+      <Navbar />
+      <Hero />
+      <About />
+      <Experience client:load />
+      <Contact />
+    </div>
   </body>
 </html>

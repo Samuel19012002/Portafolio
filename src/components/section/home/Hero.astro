@@ -1,40 +1,35 @@
 ---
-import "../styles/global.css";
+import "@//styles/global.css";
+import LinkButton from "@/components/shared/buttons/LinkButton.astro";
+
 ---
 
 <section id="hero" class="min-h-screen flex items-center bg-[#1E1B29] px-6">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
     
-    <!-- Columna izquierda (Texto) -->
-    <div class="flex-1">
+    <div class="flex-1 flex flex-col gap-2">
       <p class="text-gray-200 text-sm font-mono">Hi, my name is</p>
 
-      <h1 class="text-white text-5xl sm:text-6xl font-bold mt-2 font-mono">
+      <h1 class="text-white text-5xl sm:text-6xl font-bold font-mono">
         Samuel Rivadeneira.
       </h1>
 
-      <h2 class="text-gray-400 text-3xl sm:text-4xl font-mono font-bold mt-2">
+      <h2 class="text-gray-400 text-3xl sm:text-4xl font-mono font-bold ">
         I build things for the web.
       </h2>
 
-      <p class="text-gray-200 mt-6 leading-relaxed font-mono">
+      <p class="text-gray-200 leading-relaxed font-mono">
         Soy un desarrollador full-stack especializado en construir experiencias digitales 
         modernas. Actualmente me enfoco en soluciones accesibles y centradas en las personas.
       </p>
 
-      <div class="mt-8 inline-flex">
-        <a
-          href="#projects"
-          class="px-6 py-2 border-2 border-white rounded-md relative overflow-hidden
-                 transition-all duration-300 ease-out
-                 hover:bg-white hover:text-[#1E1B29] hover:-translate-x-1 font-dev text-white"
-        >
-          Ver mis proyectos
-        </a>
-      </div>
+      <span/>
+      
+      <LinkButton href="#" label="Ver mis proyectos" id="download-btn" />
+        
+
     </div>
 
-    <!-- Columna derecha (Imagen) -->
     <div class="flex-1 flex justify-center md:justify-end">
       <img 
         src="/sam_port.png" 
@@ -44,3 +39,10 @@ import "../styles/global.css";
     </div>
   </div>
 </section>
+
+<script>
+  document.getElementById("download-btn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("Descargando CV...");
+  });
+</script>
